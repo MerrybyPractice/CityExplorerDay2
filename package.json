@@ -1,0 +1,28 @@
+{
+  "name": "08-city-explorer2",
+  "version": "1.0.0",
+  "description": "day two of city explorer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MerrybyPractice/CityExplorerDay2.git"
+  },
+  "keywords": [
+    "city!",
+    "Explore"
+  ],
+  "author": "Juliann Talkington, Merry Cimakasky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MerrybyPractice/CityExplorerDay2/issues"
+  },
+  "homepage": "https://github.com/MerrybyPractice/CityExplorerDay2#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
+  }
+}
