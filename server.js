@@ -13,7 +13,7 @@ app.use(cors());
 const PORT = process.env.PORT;
 //const MAPS_API = process.env.MAPS_API;
 
-//pathing
+//PATHING
 
 //looking for a request (from a server 1 to be defined) and a response  (from server 2)
 //looking for the data in our data file
@@ -39,17 +39,19 @@ app.get('/testing', (request, response) => {
   response.sendStatus(test);
 });
 
-
-
+//LISTENER
+//Waiting for activity on the html page (connected to server 1) and waiting for some type of action.
 app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 
+//Error handling
+//Function that that is returning an unexected input
+//Notifies the user that the input was not as expected.
 function handleError(err, res){
   console.error(err);
   if (res) res.status(500).send('Sorry, we seem to have a bit of a problem')
 }
 
 //helper functions
-
 //location
 
 function searchToLatLong(query){
