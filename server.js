@@ -14,17 +14,25 @@ const PORT = process.env.PORT;
 //const MAPS_API = process.env.MAPS_API;
 
 //pathing
+
+//looking for a request (from a server 1 to be defined) and a response  (from server 2)
+//looking for the data in our data file
+
+//end point: location
+//geodata
 app.get('/location', (request, response) => {
   const locationData = searchToLatLong(request.query.data);
   response.send(locationData);
 });
-
+//end point: weather
+//weather
 app.get('/weather', (request, response) => {
   const weatherData = searchWeather(request.query.data);
   response.send(weatherData);
 })
 
-
+//end point: testing
+//testing route
 app.get('/testing', (request, response) => {
   console.log('Im here.');
   const test = {test: `this works on PORT${PORT}`}

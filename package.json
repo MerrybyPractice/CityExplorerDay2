@@ -23,6 +23,7 @@
   "homepage": "https://github.com/MerrybyPractice/CityExplorerDay2#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4"
   }
 }
