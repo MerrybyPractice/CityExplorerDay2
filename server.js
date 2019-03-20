@@ -76,7 +76,7 @@ function Location(query, location){
 //finding information from the source and returning the weather data
 function searchWeather(request, response){
 
-  console.log('👿', request.query.data)
+
 
   const url=(`https://api.darksky.net/forecast/${process.env.WEATHER_API}/${request.query.data.latitude},${request.query.data.longitude}`);
   return superagent.get(url)

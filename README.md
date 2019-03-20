@@ -30,29 +30,35 @@ Estimate of time needed to complete: 60 mins
 
 Start time: 11:05
 
-Finish time: _____
+Finish time: 12:48
 
 Actual time needed to complete: _____
 
 Number and name of feature: 2: Locations
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 mins
 
-Start time: _____
+Start time: 11:05
 
-Finish time: _____
+Finish time: 12:48
 
 Actual time needed to complete: _____
 
 Number and name of feature: 3: Weather
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30mins
 
-Start time: _____
+Start time: 11:05
 
-Finish time: _____
+Finish time: 12:48
 
 Actual time needed to complete: _____
+
+---
+
+The above three features were completed concurrently, as that is how our debugging/feature creation process moved.
+
+---
 
 Number and name of feature: 4: Meetups
 
