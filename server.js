@@ -27,6 +27,9 @@ app.get('/location', searchToLatLong);
 //end point: weather
 //weather
 app.get('/weather', searchWeather);
+//end point: meetups
+//meetup info.
+app.get('/meetup', searchMeetUp);
 
 //end point: testing
 //testing route
@@ -101,3 +104,28 @@ function Weather(day){
   this.time = new Date(day.time * 1000).toString().slice(0, 15);
 }
 
+const url=(`https://api.meetup.com/2/cities?&sign=true&photo-host=public&lon=${process.env.MEET_UP_API }&lat=${request.query.data.latitude}${request.query.data.longitude}`);
+
+//-------------------------------------------------------------------
+//Meet-up
+//finding information from the source and returning the meetup data
+function searchMeetUp(request, response){
+  const url=(`api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=${request.query.data.longitude}&lat=${request.query.data.latitude}&${process.env.MEET_UP_API}`);
+
+
+  return superagent.get(url)
+    .then(result =>{
+      response.send(new MeetUp(request.query.data, result.body.results[0]));
+    })
+    .catch(error => handleError(error, response));
+}
+
+//constructor function - created a Location object
+//moved data from the source into properties of the object
+function Location(query, location){
+  // console.log(location.body);
+  this.search_query = query;
+  this.formatted_query = location.formatted_address;
+  this.latitude = location.geometry.location.lat;
+  this.longitude = location.geometry.location.lng;
+}
