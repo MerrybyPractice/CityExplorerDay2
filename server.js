@@ -1,6 +1,6 @@
 'use strict';
 
-//server architecture
+//SERVER ARCHITECTURE
 
 require('dotenv').config();
 
@@ -51,28 +51,28 @@ function handleError(err, res){
   if (res) res.status(500).send('Sorry, we seem to have a bit of a problem')
 }
 
-//helper functions
+//HELPER FUNCTIONS
+
 //location
-
+//finding the information from the source and returning the location
 function searchToLatLong(query){
-
   const geoData = require('./data/geo.json');
   const location = new Location(geoData);
   location.search_query = query;
-  console.log(location);
+  // console.log(location);
   return location;
 }
 
+//constructor function - created a Location object
+//moved data from the source into properties of the object
 function Location(data){
-  console.log(data);
   this.formatted_query = data.results[0].formatted_address;
   this.latitude = data.results[0].geometry.location.lat;
   this.longitude = data.results[0].geometry.location.lng;
 }
-
-
+//-------------------------------------------------------------------
 //weather
-
+//finding information from the source and returning the weather data
 function searchWeather(query){
 
   const darkSky = require('./data/darksky.json');
@@ -81,15 +81,14 @@ function searchWeather(query){
   darkSky.daily.data.forEach(day =>{
     weatherArray.push(new Weather(day));
   });
-
-  // weather.search_query = query;
-  console.log(weatherArray);
   return weatherArray;
 }
 
-
+//constructor function - created a Weather object
+//moved data from the sources into properties of the object
 function Weather(day){
   this.forecast = day.summary;
+  //decompressing (*1000) the input and slicing off the front 15 characters so it is something that can be read easily by users.
   this.time = new Date(day.time * 1000).toString().slice(0, 15);
 }
 
