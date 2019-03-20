@@ -1,6 +1,6 @@
 # Project City Explorer
 
-**Author**: Merry Cimakasky, Jessica Zuchowski
+**Author**: Merry Cimakasky, Jessica Zuchowski Juliann Talkington
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
@@ -23,3 +23,43 @@ We will be utilizing APIs such as: Google Maps, Dark Sky, Movie Database, Yelp, 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 -->
+
+Number and name of feature: 1: Data Formatting
+
+Estimate of time needed to complete: 60 mins
+
+Start time: 11:05
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Number and name of feature: 2: Locations
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Number and name of feature: 3: Weather
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Number and name of feature: 4: Meetups
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
