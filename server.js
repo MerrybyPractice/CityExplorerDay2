@@ -60,6 +60,7 @@ function searchToLatLong(request, response){
 
   return superagent.get(url)
     .then(result =>{
+      console.log('line 63', result.body);
       response.send(new Location(request.query.data, result.body.results[0]));
     })
     .catch(error => handleError(error, response));
@@ -104,28 +105,29 @@ function Weather(day){
   this.time = new Date(day.time * 1000).toString().slice(0, 15);
 }
 
-const url=(`https://api.meetup.com/2/cities?&sign=true&photo-host=public&lon=${process.env.MEET_UP_API }&lat=${request.query.data.latitude}${request.query.data.longitude}`);
-
 //-------------------------------------------------------------------
 //Meet-up
 //finding information from the source and returning the meetup data
 function searchMeetUp(request, response){
-  const url=(`api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=${request.query.data.longitude}&lat=${request.query.data.latitude}&${process.env.MEET_UP_API}`);
+  console.log("line 113");
+  const url=(`api.meetup.com/find/upcoming_events?&sign=true&lon=${request.query.data.longitude}&lat=${request.query.data.latitude}&key=${process.env.MEET_UP_API}`);
 
 
   return superagent.get(url)
     .then(result =>{
-      response.send(new MeetUp(request.query.data, result.body.results[0]));
+      response.send(new MeetUp(request.query.data, result.body.events[0]));
     })
     .catch(error => handleError(error, response));
 }
 
-//constructor function - created a Location object
+//constructor function - created a MeetUp object
 //moved data from the source into properties of the object
-function Location(query, location){
-  // console.log(location.body);
+function MeetUp(query, venue){
+  console.log('line 127');
   this.search_query = query;
-  this.formatted_query = location.formatted_address;
-  this.latitude = location.geometry.location.lat;
-  this.longitude = location.geometry.location.lng;
+  this.host = group.name;
+  this.link = event_url;
+  this.name = name;
+  this.creation_data = created;
+
 }
